@@ -1,0 +1,50 @@
+<!Doctype HTML>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<div id="id1" style="position:absolute;
+left:10px;
+width:100px;
+height:100px;
+background:yellow"
+>Эксперимент</div>
+
+<div id="id2" style="position:absolute;
+left:10px;
+width:100px;
+height:100px;
+background:yellow"
+>Эксперимент</div>
+
+<script>
+function beg(){
+	id1.style.left=parseInt(id1.style.left)+10+'px';
+	id1.style.top=parseInt(id1.style.top)+10+'px';
+}
+setInterval('beg()',1000);
+
+</script>
+
+<script>
+onload=function one() {
+    var x0 = 150,
+        y0 = 150,
+        R = 100,
+        A = 0,
+        PI2 = Math.PI * 2;
+        dA = PI2 / 64;
+        id2 = document.getElementById('id2');
+    setInterval(function() {
+        id2.style.left = Math.round(x0 + R * Math.cos(A)) + 'px';
+        id2.style.top = Math.round(y0 + R * Math.sin(A)) + 'px';
+        A += dA;
+        if (A >= PI2) A -= PI2;
+        else if (A < 0) A += PI2;
+    }, 40);
+}; 	
+</script>
+
+</body>
+</html>
